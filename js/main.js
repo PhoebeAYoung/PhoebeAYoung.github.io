@@ -27,13 +27,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const hero = document.querySelector("#home");
     let triggerHeight = hero.offsetHeight - 170;
 
-    if (window.scrollY > triggerHeight) {
+    
       header.classList.add("header-sticky");
       goToTop.classList.add("reveal");
-    } else {
-      header.classList.remove("header-sticky");
-      goToTop.classList.remove("reveal");
-    }
+    
   });
 
   let sections = document.querySelectorAll("section");
@@ -50,10 +47,11 @@ document.addEventListener("DOMContentLoaded", () => {
         navLinks.forEach((links) => {
           links.classList.remove("active");
           document
-            .querySelector("header nav a[href*=" + id + "]")
+            .querySelector('header nav a[href*="' + id + '"]')
             .classList.add("active");
         });
       }
     });
   };
 });
+
